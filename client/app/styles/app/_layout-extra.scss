@@ -31,7 +31,7 @@
     @media only screen and (min-width: $mq-mobile) {
       overflow: hidden;
     }
-    
+
     @media only screen and (min-width: $mq-tablet) {
       top: $navbar-hg;
     }
@@ -43,7 +43,7 @@
     }
 
   }
-  
+
   &.hidden-footer {
     .wrapper > section {
       bottom: 0;
@@ -135,7 +135,7 @@
 }
 
 // Layout Horizontal Nav
-// ----------------------------------- 
+// -----------------------------------
 
 .layout-h {
   .wrapper {
@@ -167,7 +167,7 @@
 
 
 // Aside float
-// ----------------------------------- 
+// -----------------------------------
 
 $float-space: 15px;
 .aside-float {
@@ -214,7 +214,7 @@ $float-space: 15px;
       }
     }
   }
-  
+
   &.aside-toggled .wrapper {
     // small delay to add some effect to sidebar slide
     > .aside {
@@ -230,11 +230,14 @@ $float-space: 15px;
       left: $float-space;
     }
   }
-  
+
   // adapt header logo
   @media only screen and (min-width: $mq-tablet) {
     &.aside-collapsed .topnavbar .navbar-header {
       width: $aside-wd-collapsed + ($float-space * 2);
+    }
+    &.aside-collapsed-text .topnavbar .navbar-header {
+      width: $aside-wd-collapsed-text + ($float-space * 2);
     }
     &.layout-fs {
       .wrapper > section > .content-wrapper {

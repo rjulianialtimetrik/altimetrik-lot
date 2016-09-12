@@ -10,7 +10,7 @@
     padding: 20px 22px;
     > .card-title {
       margin: 0;
-      font-size: 18px;      
+      font-size: 18px;
     }
     > .card-icon {
       float: right;
@@ -36,6 +36,7 @@
   }
   .card-offset {
     position: relative;
+    z-index: 1;
     > * {
       position: absolute;
       top: 0;
@@ -46,13 +47,13 @@
 
   .card-toolbar {
     position: relative;
-    width: 100%;    
+    width: 100%;
     min-height: 64px;
     font-size: 18px;
     line-height: 64px;
     padding-left: 22px;
     z-index: 2;
-  }  
+  }
   .card-subheader {
     padding: 16px 0 16px 16px;
     line-height: .75em;

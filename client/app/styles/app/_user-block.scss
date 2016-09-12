@@ -1,7 +1,7 @@
 /* ========================================================================
      Component: user-block
  ========================================================================== */
- 
+
  // for use as navbar item
 .has-user-block {
   display: block;
@@ -18,7 +18,7 @@
 
   background: url('../img/user-bg.jpg') no-repeat left top;
   background-size: cover;
-  
+
   > .user-block-picture {
     position: relative;
     width: 90px;
@@ -60,7 +60,8 @@
 }
 
 // Adapt to collapsed mode
-.aside-collapsed {
+.aside-collapsed,
+.aside-collapsed-text {
 
   .user-block {
     padding: 15px 0 14px;
@@ -79,7 +80,7 @@
       display: none;
     }
   }
-  
+
   .user-block-status {
     > .circle {
       bottom: 0;

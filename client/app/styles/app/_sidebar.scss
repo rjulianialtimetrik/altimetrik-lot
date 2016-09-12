@@ -1,7 +1,7 @@
 /* ========================================================================
      Component: sidebar
  ========================================================================== */
- 
+
 $sidebar-bg:                      $aside-bg;
 
 $sidebar-item-color:              #515253;
@@ -24,10 +24,10 @@ $scrollbar-wd:                    17px;
 .sidebar {
   height: 100%;
   padding-bottom: 20px;
-  background-color: $sidebar-bg; 
+  background-color: $sidebar-bg;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  
+
   // draw a divider for the sidebar
   &:after {
     content:"";
@@ -63,7 +63,7 @@ $scrollbar-wd:                    17px;
     > li {
       border-left: $sidebar-item-border-wd solid transparent;
       @include transition(border-left-color 0.4s ease);
-      
+
       > a,
       > .nav-item {
         padding: 12px 24px;
@@ -102,7 +102,7 @@ $scrollbar-wd:                    17px;
         > .nav-item > em,
         > a > em {
           color: $sidebar-icon-color-active;
-        }  
+        }
       }
 
       &.active {
@@ -127,14 +127,14 @@ $tablet-landscape: 1025px;
 // Sub Levels
 .sidebar-subnav {
   background-color: $sidebar-bg;
-  
+
   > .sidebar-subnav-header {
     color: $sidebar-item-color;
     display: none;
     padding: 10px 20px;
     font-weight: bold;
   }
-  
+
   > li  {
     border-left: 0 !important;
     > a,
@@ -206,25 +206,26 @@ $tablet-landscape: 1025px;
 // ---------------------------------
 
 @media only screen and (min-width: $mq-tablet) {
-  
+
   .sidebar > .nav {
 
     .label {
       margin: 2px 0 0 0;
     }
   }
-  
+
 } // @media @desktop
 
 // Collapsed state styles
-.aside-collapsed {
+.aside-collapsed,
+.aside-collapsed-text {
 
   .sidebar {
     overflow-x: hidden;
     // Applies to first level items
     > .nav {
-      
-      .nav, 
+
+      .nav,
       > .nav-heading,
       > li > .nav-item > span,
       > li > a > span {
@@ -243,8 +244,8 @@ $tablet-landscape: 1025px;
           }
           &:focus { // accessibility
             background-color: transparent;
-            > em { 
-              color: inherit; 
+            > em {
+              color: inherit;
             }
           }
         }
@@ -255,13 +256,35 @@ $tablet-landscape: 1025px;
     .nav {
       .label {
         position: absolute;
-        top: 10px; 
+        top: 10px;
         right: 5px;
         text-indent: 0;
       }
     }
 
   } // .sidebar
-} // .aside-collapsed
+} // .aside-collapsed/text
 
+.aside-collapsed-text {
 
+  .sidebar {
+    > .nav {
+
+      > li > .nav-item > span,
+      > li > a > span {
+        display: block !important;
+        font-size: 12px;
+      }
+
+      > li {
+        width: $aside-wd-collapsed-text - 2;
+        > a {
+          padding: 14px 0;
+          > em {
+            font-size: 1.4em;
+          }
+        }
+      }
+    }
+  }
+}

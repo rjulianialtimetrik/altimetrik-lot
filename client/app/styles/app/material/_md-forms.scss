@@ -16,13 +16,13 @@
   border-bottom: 1px solid $input-border;
   border-radius: 0;
   box-shadow: none;
-  
+
   &:focus,
   &.focus {
     padding-bottom: 1px;
     border-color: $brand-primary;
     border-bottom-width: 2px;
-    
+
     &~label {
       top: 0!important;
       font-size: .85em!important;
@@ -46,7 +46,7 @@
   &[disabled] {
     opacity: .5;
   }
-  
+
   // variant for dark background
   &.mda-form-light:focus,
   &.mda-form-light.focus {
@@ -59,7 +59,7 @@
 
 }
 
-// text area 
+// text area
 textarea.mda-form-control {
     height: auto;
 }
@@ -81,7 +81,7 @@ textarea.mda-form-control {
 
 .form-validate {
   .mda-form-control {
-    
+
     // Invalid input
     &.ng-dirty.ng-invalid {
       border-color: $brand-danger;
@@ -100,16 +100,17 @@ textarea.mda-form-control {
             color: $brand-success;
         }
     }
-    
+
   }
 }
 
-// Float label 
+// Float label
 .float-label  {
   .mda-form-control~label {
     top: 20px;
     font-size: 1em;
   }
+  .mda-form-control.ng-not-empty~label,
   .mda-form-control.ng-dirty~label,
   .mda-form-control.has-value~label {
     top: 0;
@@ -130,7 +131,7 @@ textarea.mda-form-control {
     left: 2px;
   }
   > label {
-    margin-left: 36px;    
+    margin-left: 36px;
   }
 }
 
