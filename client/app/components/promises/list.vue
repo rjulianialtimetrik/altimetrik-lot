@@ -1,8 +1,10 @@
 <template lang="html">
-    <div>
-            <router-view></router-view>
-    </div>
+  <div class="container">
+      <p>
+          This is the list of promises
+      </p>
 
+  </div>
 </template>
 
 <script>

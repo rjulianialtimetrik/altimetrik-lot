@@ -22,6 +22,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "compass-sass-mixins": "^0.12.7",
+    "font-awesome": "^4.6.3",
     "jquery": "^3.1.0",
     "vue": "^1.0.26",
     "vue-resource": "^1.0.1",
@@ -36,6 +38,7 @@
     "brunch": "^2.8.2",
     "css-brunch": "^2.6.1",
     "javascript-brunch": "^2.0.0",
+    "sass-brunch": "^2.6.3",
     "vue-brunch": "^1.1.2",
     "vue-devtools": "^2.0.4"
   }
