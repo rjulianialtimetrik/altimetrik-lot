@@ -1,11 +1,17 @@
 <template lang="html">
-    <div>
+    <div class="">
+        <header>
+            <bs-navbar></bs-navbar>
+        </header>
         <router-view></router-view>
+
     </div>
+
 
 </template>
 
 <script>
+import BsNavbar from './partials/bs-navbar.vue'
 export default {
   data() {
     return {
@@ -15,7 +21,9 @@ export default {
   ready() {},
   attached() {},
   methods: {},
-  components: {}
+  components: {
+      'bs-navbar': BsNavbar
+  }
 };
 </script>
 
