@@ -9,9 +9,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" v-link="'/'">
+                <a class="navbar-brand m-sm" v-link="'/'">
 
-                    <img src="/img/Altimetrik_Logo.png" class="img-responsive" style="max-height: 100%;">
+                    <img src="/img/altimetrik-logo-white.png" class="img-responsive" style="max-height: 100%;">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

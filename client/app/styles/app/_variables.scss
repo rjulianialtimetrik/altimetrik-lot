@@ -21,7 +21,7 @@ $brand-success:          #4CAF50;
 $brand-info:             #2196F3;
 $brand-warning:          #FF9800;
 $brand-danger:           #F44336;
-
+$brand-background:       #046393;
 // New brand colors
 
 $brand-inverse:          #263238;
@@ -36,6 +36,7 @@ $brand-yellow:           #FFEB3B;
 
 $amountOfLight: 10%;
 
+$brand-background-light:       lighten($brand-background, $amountOfLight);
 $brand-primary-light:          lighten($brand-primary, $amountOfLight);
 $brand-success-light:          lighten($brand-success, $amountOfLight);
 $brand-info-light:             lighten($brand-info, $amountOfLight);
@@ -48,6 +49,7 @@ $brand-purple-light:           lighten($brand-purple, $amountOfLight);
 $brand-dark-light:             lighten($brand-dark, $amountOfLight);
 $brand-yellow-light:           lighten($brand-yellow, $amountOfLight);
 
+$brand-background-dark:        darken($brand-background, $amountOfLight);
 $brand-primary-dark:           darken($brand-primary, $amountOfLight);
 $brand-success-dark:           darken($brand-success, $amountOfLight);
 $brand-info-dark:              darken($brand-info, $amountOfLight);
@@ -534,7 +536,7 @@ $state-success-text:             $brand-success;
 $state-success-bg:               #dff0d8;
 $state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%);
 
-$state-info-text:                $brand-info; 
+$state-info-text:                $brand-info;
 $state-info-bg:                  #d9edf7;
 $state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%);
 
@@ -900,5 +902,3 @@ $page-header-border-color:    $gray-lighter;
 $dl-horizontal-offset:        $component-offset-horizontal;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter;
-
-
