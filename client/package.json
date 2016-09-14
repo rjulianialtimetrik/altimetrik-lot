@@ -39,7 +39,7 @@
     "css-brunch": "^2.6.1",
     "javascript-brunch": "^2.0.0",
     "sass-brunch": "^2.6.3",
-    "vue-brunch": "^1.1.2",
+    "vue-brunch": "1.1.2",
     "vue-devtools": "^2.0.4"
   }
 }
