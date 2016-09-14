@@ -1,23 +1,30 @@
 <template lang="html">
-  <div class="container">
-      <p>
-          This is the list of promises
-      </p>
+  <section class="wrapper">
+      <h1>Promises</h1>
 
-  </div>
+  </section>
+
 </template>
 
 <script>
+import PromiseService from '../../api/promises/promises'
+
 export default {
   data() {
     return {
+        promises: []
     };
   },
   computed: {},
   ready() {},
   attached() {},
   methods: {},
-  components: {}
+  components: {},
+  created: function() {
+      PromiseService.list().then((response)=> {
+          this.promises = response.body
+      })
+  }
 };
 </script>
 
