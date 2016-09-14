@@ -19,9 +19,9 @@ $nav-header-wd-toggled:         $aside-wd-collapsed;
 
 $nav-header-wd-toggled-text:    $aside-wd-collapsed-text;
 
-$nav-top-bg:                    $brand-background;
+$nav-top-bg:                    $brand-info;
 $nav-top-bg-start:              $nav-top-bg;
-$nav-top-bg-end:                $brand-background-light;
+$nav-top-bg-end:                $brand-info-light;
 $nav-header-bg:                 transparent;
 
 $nav-top-item-mobile:           $nav-top-bg;
@@ -347,3 +347,4 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
     }
   }
 }
+

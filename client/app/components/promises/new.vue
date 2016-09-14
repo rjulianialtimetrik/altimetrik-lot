@@ -7,7 +7,7 @@
           <div class="col-xs-12 col-md-6 p-xl">
               <h1>{{ $route.title }}</h1>
               <validator name="validation" :classes="{valid: 'has-success', invalid: 'has-error'}">
-              <form class="bs-component" action="index.html" method="post" v-on:submit.prevent="signUp" novalidate>
+              <form class="bs-component" v-on:submit.prevent="signUp" novalidate>
                     <div class="form-group" v-validate-class >
                         <label class="control-label" for="promiseName">Name</label>
                         <input type="text" class="form-control" id="promiseName"
@@ -19,7 +19,7 @@
                         <label for="promiseEmail" class="control-label">Email</label>
                         <input type="email" name="promiseName" v-model="newPromise.email" class="form-control"
                         v-validate:email="{required: {rule: true, message: 'Please enter your email address'}}">
-                        <span class="help-block" v-if="$validation.name.invalid">{{ $validation.email.required }}</span>
+                        <span class="help-block" v-if="$validation.email.invalid">{{ $validation.email.required }}</span>
                     </div>
                     <div class="form-group">
                         <label for="promiseCareer" class="control-label">Career</label>
@@ -31,7 +31,7 @@
                             <option>AP</option>
                             <option>Otra</option>
                         </select>
-                        <span class="help-block" v-if="$valiation.career.invalid"{{ $validation.career.required }}></span>
+                        <span class="help-block" v-if="$validation.career.invalid"{{ $validation.career.required }}></span>
                     </div>
                     <div class="form-group" v-show="newPromise.career == 'Otra'">
                         <label for="promiseCareerOther" class="control-label">Which one?</label>
@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import PromisesService from '../../api/promises/promises'
 export default {
   data() {
     return {
@@ -97,8 +98,13 @@ export default {
   ready() {},
   attached() {},
   methods: {
-      signUp: function(event) {
-          console.log(this.newPromise.name)
+      signUp: function() {
+          PromisesService.create(this.newPromise).then((result)=>{
+              this.$router.go({name: 'promise-added'})
+          }, (result)=>{
+              console.error(result)
+              alert('There was a problem signing you up... sorry about that :(')
+          })
       }
   },
   components: {}

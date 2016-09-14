@@ -10,7 +10,7 @@
               Options
           </div>
           <div class="panel-body">
-              <option-form v-for.sync="opt in question.options" :opt.sync="opt"></option-form>
+              <option-form v-for.sync="opt in question.options" :opt.sync="opt" v-on:option-deleted="deleteOption"></option-form>
           </div>
           <div class="panel-footer">
               <div class="wrapper">
@@ -52,6 +52,10 @@ export default {
       },
       createQuestion: function() {
           this.$dispatch('create-question', this.question)
+      },
+      deleteOption: function(option) {
+
+          this.question.options.slice(option.number-1, 1)
       }
   },
   components: {

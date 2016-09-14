@@ -29,6 +29,10 @@ export default {
             '/sign-up': {
                 component: promises.New,
                 title: 'Would you like to become a Legend?'
+            },
+            '/promise-added': {
+                name: 'promise-added',
+                component: promises.PromiseAdded
             }
         }
     },
@@ -45,5 +49,9 @@ export default {
     '/create-question': {
         name: 'create-question',
         component: questions.Create
+    },
+    '/question-list': {
+        name: 'question-list',
+        component: questions.List
     }
 }

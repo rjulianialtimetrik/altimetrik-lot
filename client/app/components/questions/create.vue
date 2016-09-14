@@ -1,7 +1,12 @@
 <template lang="html">
   <section class="container">
-      <h1>Create a new Question for the Legendary Quiz!</h1>
-      <question-form v-on:create-question="saveQuestion"></question-form>
+      <h1>
+          Create a new Question for the Legendary Quiz!
+          <a v-link="{name: 'question-list'}" class="btn btn-info btn-lg btn-circle pull-right" title="List">
+              <i class="fa fa-bars"></i>
+          </a>
+      </h1>
+      <question-form v-on:create-question="saveQuestion" class="mt-xl"></question-form>
 
   </section>
 </template>

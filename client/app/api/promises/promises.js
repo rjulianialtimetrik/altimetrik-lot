@@ -1,15 +1,16 @@
+import Vue from 'vue'
 
 class PromisesService {
     constructor() {
 
     }
 
-    list(){
-
+    static list(){
+        return Vue.http.get('promises')
     }
 
-    create(){
-
+    static create(promise){
+        return Vue.http.post('promises', promise)
     }
 
 }
