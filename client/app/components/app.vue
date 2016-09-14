@@ -12,6 +12,8 @@
 
 <script>
 import BsNavbar from './partials/bs-navbar.vue'
+import store from '../state/store'
+
 export default {
   data() {
     return {
@@ -23,7 +25,8 @@ export default {
   methods: {},
   components: {
       'bs-navbar': BsNavbar
-  }
+  },
+  store: store
 };
 </script>
 

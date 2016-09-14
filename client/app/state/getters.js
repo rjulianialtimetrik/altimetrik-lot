@@ -1,13 +1,16 @@
 
-export default {
-    getUser: state => {
-        return state.auth.user
-    },
-    getToken: state => {
-        return state.auth.token
-    },
-    isLoggedIn: state => {
-        return state.token != null && state.user != null
-    }
+export const getUser = state => {
+    return state.auth.user
+}
 
+export const getToken = state => {
+        return state.auth.token
+}
+
+export const isLoggedIn = state => {
+    return state.auth.token != null && state.auth.user != null
+}
+
+export const getAnswers = state => {
+    return state.quiz.answers
 }

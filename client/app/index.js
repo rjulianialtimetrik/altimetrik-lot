@@ -2,14 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import VueValidator from 'vue-validator'
-import Vuex from 'vuex'
+
 import routes from './config/routes'
 import App from './components/app.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(VueValidator)
-Vue.use(Vuex)
 
 const environment = process.env.NODE_ENV
 

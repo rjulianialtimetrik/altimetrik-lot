@@ -4,14 +4,20 @@
  * [Vuex Specs](http://vuex.vuejs.org/en/actions.html)
  */
 
-import {
-    AUTHENTICATE, UNAUTHENTICATE
-} from './mutation-types'
+import * as types from './mutation-types'
 
-function authenticate({dispatch}, payload) {
-    dispatch(AUTHENTICATE, payload)
+export const authenticate = ({dispatch}, payload) => {
+    dispatch(types.AUTHENTICATE, payload)
 }
 
-function unauthenticate({dispatch}) {
-    dispatch(UNAUTHENTICATE)
+export const unauthenticate = ({dispatch}) => {
+    dispatch(types.UNAUTHENTICATE)
+}
+
+export const clearAnswers = ({dispatch}) => {
+    dispatch(types.QUIZ_CLEAR_ANSWERS)
+}
+
+export const setAnswers = ({dispatch}, answers) => {
+    dispatch(types.QUIZ_SET_ANSWERS, answers)
 }
