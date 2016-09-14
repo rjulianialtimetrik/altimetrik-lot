@@ -3,6 +3,7 @@ import landingPage from '../components/landing.vue'
 import promises from '../components/promises'
 import quiz from '../components/quizes/quiz.vue'
 import quizFinished from '../components/quizes/quiz-finished.vue'
+import questions from '../components/questions'
 
 export default {
 
@@ -40,5 +41,9 @@ export default {
         name: 'quiz-finished',
         component: quizFinished,
         title: 'You\'ve finished the Legendary Quiz!'
+    },
+    '/create-question': {
+        name: 'create-question',
+        component: questions.Create
     }
 }

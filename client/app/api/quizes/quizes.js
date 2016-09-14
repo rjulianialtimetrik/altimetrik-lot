@@ -13,6 +13,10 @@ class QuizesService {
         return Vue.http.get('questions')
     }
 
+    static create(question) {
+        return Vue.http.post('questions', question)
+    }
+
 
 }
 

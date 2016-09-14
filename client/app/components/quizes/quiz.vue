@@ -110,6 +110,33 @@ export default {
         finish: function() {
             this.setAnswers(this.answers)
             this.$router.go({path: '/quiz-finished'})
+        },
+        /**
+         * Returns an array of randomly selected questions taken from questions,
+         * with a maximum size of {size}
+         * @param  {Array} questions An array containing questions
+         * @param  {Number} size      The maximum number of questions being returned
+         * @return {Array}           An array of randomly picked items taken
+         * from questions, with a max size of {size}
+         */
+        shuffleQuestions: (questions, size) => {
+            let result = []
+            // there are  enough questions to pick some up
+
+            while (result.length < size && result.length < questions.length) {
+                //find a random item
+                let candidateIndex = Math.floor(Math.random()*questions.length)
+                let candidate = {}
+                //the following code will get the random item from
+                //the array and, in case it's already in our result, it will
+                //look for the immediate next question in the array
+                do {
+                    candidate = questions[candidateIndex];
+                    candidateIndex = (candidateIndex + 1)%questions.length
+                } while (result.filter(q => q._id == candidate._id).length > 0)
+                result.push(candidate)
+            }
+            return result
         }
     },
     components: {
@@ -120,35 +147,14 @@ export default {
         QuizService.getQuestions().then((response)=>{
             console.log(response)
 
-            self.questions = [{
-                text: "This is a question",
-                options: [{
-                    text: "option 1",
-                    correct: false
-                }, {
-                    text: "option 2",
-                    correct: false
-                }, {
-                    text: "option 3",
-                    correct: true
-                }, {
-                    text: "option 4",
-                    correct: false
-                }]
-            }, {
-                text: 'The next question',
-                options: [{
-                    text: "My option"
-                }, {
-                    text: "The correct option",
-                    correct: true
-                }]
-            }]
-            
+            self.questions = self.shuffleQuestions(response.body, 10)
+
         }, (response) => {
             //error callback
             console.log(response)
         })
+
+
     }
 };
 </script>

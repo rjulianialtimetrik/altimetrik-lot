@@ -6,6 +6,6 @@ export default {
     },
     development: {
         environment: "development",
-        apiRoot: "http://localhost:3333/api"
+        apiRoot: "http://localhost:3030"
     }
 }

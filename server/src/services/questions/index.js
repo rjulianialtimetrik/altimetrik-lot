@@ -13,16 +13,12 @@ module.exports = function(){
     autoload: true
   });
 
-  let options = {
-    Model: db,
-    paginate: {
-      default: 5,
-      max: 25
-    }
+  let questionsServiceConfig = {
+    Model: db
   };
 
   // Initialize our service with any options it requires
-  app.use('/questions', service(options));
+  app.use('/questions', service(questionsServiceConfig));
 
   // Get our initialize service to that we can bind hooks
   const questionsService = app.service('/questions');
@@ -32,4 +28,5 @@ module.exports = function(){
 
   // Set up our after hooks
   questionsService.after(hooks.after);
+
 };
