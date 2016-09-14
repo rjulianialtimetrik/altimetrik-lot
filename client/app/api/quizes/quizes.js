@@ -1,4 +1,4 @@
-
+import Vue from 'vue'
 /**
  *
  */
@@ -7,10 +7,10 @@ class QuizesService {
 
     }
     /**
-     * 
+     *
      */
-    getQuiz() {
-
+    static getQuestions() {
+        return Vue.http.get('questions')
     }
 
 

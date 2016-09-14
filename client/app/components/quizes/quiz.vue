@@ -46,6 +46,7 @@
 import Question from './q-question.vue'
 import { setAnswers, clearAnswers } from '../../state/actions'
 import { getAnswers } from '../../state/getters'
+import QuizService from '../../api/quizes/quizes'
 /**
  * Implements the quiz
  */
@@ -57,30 +58,7 @@ export default {
             lastAnswer: null,
             index: 1,
             answers: [],
-            questions: [{
-                text: "This is a question",
-                options: [{
-                    text: "option 1",
-                    correct: false
-                }, {
-                    text: "option 2",
-                    correct: false
-                }, {
-                    text: "option 3",
-                    correct: true
-                }, {
-                    text: "option 4",
-                    correct: false
-                }]
-            }, {
-                text: 'The next question',
-                options: [{
-                    text: "My option"
-                }, {
-                    text: "The correct option",
-                    correct: true
-                }]
-            }]
+            questions: []
         };
     },
     computed: {},
@@ -136,6 +114,41 @@ export default {
     },
     components: {
         'q-question': Question
+    },
+    created: function(){
+        let self = this
+        QuizService.getQuestions().then((response)=>{
+            console.log(response)
+
+            self.questions = [{
+                text: "This is a question",
+                options: [{
+                    text: "option 1",
+                    correct: false
+                }, {
+                    text: "option 2",
+                    correct: false
+                }, {
+                    text: "option 3",
+                    correct: true
+                }, {
+                    text: "option 4",
+                    correct: false
+                }]
+            }, {
+                text: 'The next question',
+                options: [{
+                    text: "My option"
+                }, {
+                    text: "The correct option",
+                    correct: true
+                }]
+            }]
+            
+        }, (response) => {
+            //error callback
+            console.log(response)
+        })
     }
 };
 </script>
