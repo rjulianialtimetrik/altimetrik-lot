@@ -42,7 +42,7 @@ export default {
             template: '<router-view></router-view>'
         },
         subRoutes: {
-            '/start': {
+            '/': {
                 component: quizes.Start,
                 title: 'Start your Quiz',
                 name: 'quiz-start'
@@ -75,5 +75,5 @@ export default {
             }
         }
     }
-    
+
 }

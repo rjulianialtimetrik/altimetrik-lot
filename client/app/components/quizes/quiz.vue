@@ -58,18 +58,17 @@ export default {
             lastAnswer: null,
             index: 1,
             answers: [],
-            questions: [],
-            person: {}
+            questions: []
         };
     },
     computed: {},
     ready() {
-        this.person = this.getPerson()
+        console.log(this.person)
     },
     vuex: {
         getters: {
             getAnswers,
-            getPerson
+            person: getPerson
         },
         actions: {
             setAnswers
@@ -145,17 +144,17 @@ export default {
     },
     created: function(){
         let self = this
+        //the user has not filled in data, so let's take him/her back
+        if (!this.person.name || !this.person.email) {
+            this.$router.go({name: 'quiz-start'})
+            return;
+        }
         QuizService.getQuestions().then((response)=>{
-            console.log(response)
-
             self.questions = self.shuffleQuestions(response.body, 10)
-
         }, (response) => {
             //error callback
             console.log(response)
         })
-
-
     }
 };
 </script>

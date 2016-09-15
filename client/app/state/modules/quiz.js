@@ -4,12 +4,15 @@ import {
 
 //initial state: the user is not logged in
 const state = {
-    answers: []
+    answers: [],
+    person: {}
 }
 
 const mutations = {
     [QUIZ_SET_PERSON](state, personData) {
+        console.log('Setting state\'s person to: ', personData.name, personData.email)
         state.person = personData
+
     },
     [QUIZ_CLEAR](state) {
         state.answers = []

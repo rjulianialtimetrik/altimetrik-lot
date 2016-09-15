@@ -1,4 +1,5 @@
 'use strict';
+const quizes = require('./quizes');
 const promises = require('./promises');
 const questions = require('./questions');
 const authentication = require('./authentication');
@@ -12,4 +13,5 @@ module.exports = function() {
   app.configure(user);
   app.configure(questions);
   app.configure(promises);
+  app.configure(quizes);
 };

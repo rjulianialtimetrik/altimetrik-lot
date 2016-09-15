@@ -40,7 +40,8 @@
 </template>
 
 <script>
-import { setPerson } from '../../state/actions'
+import { setPerson, clearQuiz } from '../../state/actions'
+import { getPerson } from '../../state/getters'
 export default {
   data() {
     return {
@@ -51,12 +52,19 @@ export default {
     };
   },
   vuex: {
+      getters: {
+          getPerson
+      },
       actions: {
-          setPerson: setPerson
+          setPerson,
+          clearQuiz
       }
   },
   computed: {},
-  ready() {},
+  ready() {
+      //clear any previous quiz data stored in our app's state
+      this.clearQuiz()
+  },
   attached() {},
   methods: {
       startQuiz: function() {

@@ -14,7 +14,7 @@ export const unauthenticate = ({dispatch}) => {
     dispatch(types.UNAUTHENTICATE)
 }
 
-export const clearAnswers = ({dispatch}) => {
+export const clearQuiz = ({dispatch}) => {
     dispatch(types.QUIZ_CLEAR)
 }
 
