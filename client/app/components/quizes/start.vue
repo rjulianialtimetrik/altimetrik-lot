@@ -1,7 +1,9 @@
 <template lang="html">
   <section class="wrapper">
       <div class="col-xs-12 col-md-7">
-
+          <div class="row">
+              <img src="/img/bg5.jpg" class="img-responsive"/>
+          </div>
       </div>
       <div class="col-xs-12 col-md-5">
           <h1>Are you ready for a Legendary Quiz?</h1>
@@ -12,7 +14,7 @@
           </div>
           <br>
           <div class="panel panel-default">
-             <div class="panel-heading">Fill in your data</div>
+             <div class="panel-heading"><strong>Fill in your data</strong></div>
              <div class="panel-body">
                 <form class="form-horizontal" v-on:submit.prevent="startQuiz">
                    <div class="form-group">
@@ -29,7 +31,7 @@
                    </div>
                    <div class="form-group">
                       <div class="col-lg-offset-2 col-lg-10">
-                         <button type="submit" class="btn btn-sm btn-primary">START!</button>
+                         <button type="submit" class="btn btn-sm btn-primary pull-right">START!</button>
                       </div>
                    </div>
                 </form>
