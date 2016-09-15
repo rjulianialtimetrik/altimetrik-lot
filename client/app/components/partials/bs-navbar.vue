@@ -17,10 +17,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
-                        <a v-link="{path: '/promises/sign-up'}">Become a Legend</a>
+                        <a v-link="{name: 'promise-sign-up'}">Become a Legend</a>
                     </li>
                     <li>
-                        <a v-link="{path: '/legendary-quiz'}">Legendary Quiz</a>
+                        <a v-link="{name: 'quiz-start'}">Legendary Quiz</a>
                     </li>
                 </ul>
             </div>

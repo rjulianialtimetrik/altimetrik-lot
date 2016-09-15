@@ -1,5 +1,5 @@
 import {
-    QUIZ_CLEAR_ANSWERS, QUIZ_SET_ANSWERS
+    QUIZ_CLEAR, QUIZ_SET_ANSWERS, QUIZ_SET_PERSON
 } from '../mutation-types'
 
 //initial state: the user is not logged in
@@ -8,7 +8,10 @@ const state = {
 }
 
 const mutations = {
-    [QUIZ_CLEAR_ANSWERS](state) {
+    [QUIZ_SET_PERSON](state, personData) {
+        state.person = personData
+    },
+    [QUIZ_CLEAR](state) {
         state.answers = []
     },
     [QUIZ_SET_ANSWERS](state, answers) {

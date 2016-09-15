@@ -15,7 +15,11 @@ export const unauthenticate = ({dispatch}) => {
 }
 
 export const clearAnswers = ({dispatch}) => {
-    dispatch(types.QUIZ_CLEAR_ANSWERS)
+    dispatch(types.QUIZ_CLEAR)
+}
+
+export const setPerson = ({dispatch}, personData) => {
+    dispatch(types.QUIZ_SET_PERSON, personData)
 }
 
 export const setAnswers = ({dispatch}, answers) => {

@@ -1,8 +1,7 @@
 import routeError from '../components/errors/route-error.vue'
 import landingPage from '../components/landing.vue'
 import promises from '../components/promises'
-import quiz from '../components/quizes/quiz.vue'
-import quizFinished from '../components/quizes/quiz-finished.vue'
+import quizes from '../components/quizes'
 import questions from '../components/questions'
 
 export default {
@@ -28,7 +27,8 @@ export default {
             },
             '/sign-up': {
                 component: promises.New,
-                title: 'Would you like to become a Legend?'
+                title: 'Would you like to become a Legend?',
+                name: 'promise-sign-up'
             },
             '/promise-added': {
                 name: 'promise-added',
@@ -38,20 +38,42 @@ export default {
     },
     '/legendary-quiz': {
         name: 'legendary-quiz',
-        component: quiz,
-        title: 'Do the Legendary Quiz'
+        component: {
+            template: '<router-view></router-view>'
+        },
+        subRoutes: {
+            '/start': {
+                component: quizes.Start,
+                title: 'Start your Quiz',
+                name: 'quiz-start'
+            },
+            '/quiz': {
+                component: quizes.Quiz,
+                title: 'Ongoing Quiz',
+                name: 'quiz-do'
+            },
+            '/finished': {
+                component: quizes.Finish,
+                title: 'You\'ve completed a Legendary Quiz!',
+                name: 'quiz-finished'
+            }
+
+        }
     },
-    '/quiz-finished': {
-        name: 'quiz-finished',
-        component: quizFinished,
-        title: 'You\'ve finished the Legendary Quiz!'
-    },
-    '/create-question': {
-        name: 'create-question',
-        component: questions.Create
-    },
-    '/question-list': {
-        name: 'question-list',
-        component: questions.List
+    '/questions': {
+        component: {
+            template: '<router-view></router-view>'
+        },
+        subRoutes: {
+            '/': {
+                name: 'question-list',
+                component: questions.List
+            },
+            '/create': {
+                name: 'create-question',
+                component: questions.Create
+            }
+        }
     }
+    
 }

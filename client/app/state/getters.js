@@ -14,3 +14,7 @@ export const isLoggedIn = state => {
 export const getAnswers = state => {
     return state.quiz.answers
 }
+
+export const getPerson = state => {
+    return state.quiz.person
+}

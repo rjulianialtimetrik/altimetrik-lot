@@ -8,7 +8,7 @@
         </div>
         <div class="col-xs-12 col-md-5 ">
 
-            <h1>{{ $route.title }}</h1>
+            <h1>Quiz for {{ person.name }}</h1>
             <h3>Question {{ index }} of {{ questions.length }}</h3>
             <q-question v-for="(qIndex, q) in questions" :question="q" v-on:question-answered="answer" v-show="index=== qIndex+1"></q-question>
             <div class="" v-show="questionAnswered">
@@ -44,8 +44,8 @@
 
 <script>
 import Question from './q-question.vue'
-import { setAnswers, clearAnswers } from '../../state/actions'
-import { getAnswers } from '../../state/getters'
+import { setAnswers } from '../../state/actions'
+import { getAnswers, getPerson } from '../../state/getters'
 import QuizService from '../../api/quizes/quizes'
 /**
  * Implements the quiz
@@ -58,20 +58,21 @@ export default {
             lastAnswer: null,
             index: 1,
             answers: [],
-            questions: []
+            questions: [],
+            person: {}
         };
     },
     computed: {},
     ready() {
-
+        this.person = this.getPerson()
     },
     vuex: {
         getters: {
-            getAnswers
+            getAnswers,
+            getPerson
         },
         actions: {
-            setAnswers,
-            clearAnswers
+            setAnswers
         }
     },
     methods: {
@@ -109,7 +110,7 @@ export default {
          */
         finish: function() {
             this.setAnswers(this.answers)
-            this.$router.go({path: '/quiz-finished'})
+            this.$router.go({name: 'quiz-finished'})
         },
         /**
          * Returns an array of randomly selected questions taken from questions,
