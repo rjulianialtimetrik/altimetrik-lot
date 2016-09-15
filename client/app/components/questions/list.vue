@@ -1,5 +1,5 @@
 <template lang="html">
-  <section class="container">
+  <section class="wrapper">
       <h1>
           A very simple list of questions
           <a v-link="{name: 'create-question'}" class="btn btn-warning btn-lg btn-circle pull-right" title="New Question">
