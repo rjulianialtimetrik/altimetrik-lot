@@ -2,7 +2,7 @@
 export default {
     production: {
         environment: "production",
-        apiRoot: 'https://fairsuy.altimetrik.com/api'
+        apiRoot: 'http://api.legendsoftomorrow.tech'
     },
     development: {
         environment: "development",
