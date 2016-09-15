@@ -17,6 +17,10 @@ class QuizesService {
         return Vue.http.post('questions', question)
     }
 
+    static delete(question) {
+        return Vue.http.delete('questions/'+question._id)
+    }
+
     /**
      * Sends quizResults to the server via POST, returning the promise. This
      * should normally store the results.

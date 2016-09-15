@@ -6,6 +6,11 @@
            </div>
            <div class="card-title">{{ question.text }}</div>
         </div>
+        <div class="card-offset pull-right">
+           <button type="button" class="btn btn-danger btn-circle btn-lg" title="Delete this Question" v-on:click="confirmDelete(question)">
+              <em class="fa fa-trash"></em>
+           </button>
+        </div>
         <div class="card-subheader">Options</div>
         <div class="mda-list">
            <div class="mda-list-item" v-for="option in question.options">
@@ -32,7 +37,15 @@ export default {
   computed: {},
   ready() {},
   attached() {},
-  methods: {},
+  methods: {
+      confirmDelete: function(question) {
+          //If the user confirms deletion, emit a delete request so the parent
+          //can delete it.
+          if(confirm('Are you sure you want to DELETE this question?')) {
+              this.$dispatch('delete-question', question)
+          }
+      }
+  },
   components: {},
   props: {
       question: {

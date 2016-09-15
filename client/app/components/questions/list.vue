@@ -7,8 +7,8 @@
           </a>
       </h1>
       <div class="mt-xl row-masonry row-masonry-xl-3 row-masonry-lg-3 row-masonry-md-3 row-masonry-sm-2">
-          <div class="col-masonry" v-for="q in questions">
-              <question :question="q"></question>
+          <div class="col-masonry" v-for.sync="q in questions">
+              <question :question="q" v-on:delete-question="deleteQuestion"></question>
           </div>
       </div>
   </section>
@@ -26,7 +26,18 @@ export default {
   computed: {},
   ready() {},
   attached() {},
-  methods: {},
+  methods: {
+      deleteQuestion: function(question) {
+
+          QuizService.delete(question).then((response) => {
+              //find question and delete it
+              this.questions.splice(this.questions.findIndex(q => q._id == question._id), 1)
+              console.log('deleted question ' + question._id)
+          }, (response) => {
+              console.error('Something prevented us from deleting the quesstion...', response)
+          })
+      }
+  },
   components: {
       'question': Question
   },
