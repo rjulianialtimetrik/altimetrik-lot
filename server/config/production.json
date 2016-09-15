@@ -1,6 +1,6 @@
 {
-  "host": "altimetrik-lot-app.feathersjs.com",
-  "port": 80,
+  "host": "localhost",
+  "port": 9501,
   "nedb": "NEDB_BASE_PATH",
   "public": "../public/",
   "auth": {
