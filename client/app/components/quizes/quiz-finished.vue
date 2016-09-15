@@ -1,9 +1,9 @@
 <template lang="html">
     <section>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-7">
 
         </div>
-        <div class="col-xs-12 col-md-6" v-if="answers.length > 0">
+        <div class="col-xs-12 col-md-5" v-if="answers.length > 0">
             <h1>{{ $route.title }}</h1>
             <h3 class="text-success" v-if="award != 'Copper'">Congratulations!</h3>
             <h3 class="text-warning" v-if="award == 'Copper'">Well... that didn't quite go as planned</h3>
@@ -28,7 +28,7 @@
 
 
         </div>
-        <div v-if="answers.length === 0" class="col-xs-12 col-md-6" >
+        <div v-if="answers.length === 0" class="col-xs-12 col-md-5" >
 
             <div class="alert alert-danger mt-xl">
                 <h1>Ooops... Something went wrong</h1>
@@ -47,7 +47,8 @@
 </template>
 
 <script>
-import { getAnswers } from '../../state/getters'
+import { getAnswers, getPerson } from '../../state/getters'
+import QuizService from '../../api/quizes/quizes'
 
 export default {
   data() {
@@ -57,7 +58,8 @@ export default {
   },
   vuex: {
       getters: {
-          answers: getAnswers
+          answers: getAnswers,
+          person: getPerson
       }
   },
   computed: {
@@ -83,6 +85,14 @@ export default {
       }
   },
   ready() {
+      QuizService.saveResults({
+          person: this.person,
+          answers: this.answers
+      }).then((result) => {
+          console.log('Successfully saved quiz for', this.person.email)
+      }, (result) => {
+         console.error('Something went wrong saving the quiz', result)
+      })
   },
   attached() {},
   methods: {},

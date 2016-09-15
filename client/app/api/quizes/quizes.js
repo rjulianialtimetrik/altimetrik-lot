@@ -17,6 +17,14 @@ class QuizesService {
         return Vue.http.post('questions', question)
     }
 
+    /**
+     * Sends quizResults to the server via POST, returning the promise. This
+     * should normally store the results.
+     */
+    static saveResults(quizResults) {
+        return Vue.http.post('quizes', quizResults)
+    }
+
 
 }
 
