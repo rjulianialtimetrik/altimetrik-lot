@@ -24,7 +24,7 @@ Vue.http.options.root = config[environment].apiRoot;
 
 // Initialize Vue Router
 let router = new VueRouter({
-    history: true
+    mode: 'hash'
 
 })
 
