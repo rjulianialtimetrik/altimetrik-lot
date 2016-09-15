@@ -29,6 +29,10 @@ class QuizesService {
         return Vue.http.post('quizes', quizResults)
     }
 
+    static getResults() {
+        return Vue.http.get('quizes')
+    }
+
 
 }
 

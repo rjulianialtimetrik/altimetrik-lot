@@ -56,6 +56,10 @@ export default {
                 component: quizes.Finish,
                 title: 'You\'ve completed a Legendary Quiz!',
                 name: 'quiz-finished'
+            },
+            '/results': {
+                component: quizes.Results,
+                name: 'quiz-results'
             }
 
         }
