@@ -36,12 +36,12 @@
                    <h5>English Knowledge</h5>
                 </div>
              </div>
-             <div class="mda-list-item" v-if="{{ promise.hasWorkExperience }}">
+             <div class="mda-list-item" v-if="promise.hasWorkExperience">
                 <div class="mda-list-item-icon bg-primary">
                    <em class="fa fa-briefcase"></em>
                 </div>
                 <div class="mda-list-item-text mda-2-line">
-                   <h3>{{ promise.workExperience }}</h3>
+                   <p>{{ promise.workExperience }}</p>
                    <h5>Work Experience</h5>
                 </div>
              </div>
